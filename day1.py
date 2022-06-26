@@ -9,9 +9,3 @@ a=10
 b=20
 c=a+b
 print(c)
-
-l1 = range(1,11)
-l2 = range(10,20)
-
-import matplotlib.pyplot as plt
-plt.plot(l1,l2)
