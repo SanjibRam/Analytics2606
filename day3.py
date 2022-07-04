@@ -400,7 +400,7 @@ df.to_csv('studentgroup.csv')
 
 
 pd8
-pd8.pivot_table(index=['city','course'], columns='gender', aggfunc='size')
+pd12 = pd8.pivot_table(index=['city','course'], columns='gender', aggfunc='size')
 
 
 pd.crosstab([pd8.city],  pd8.course)
@@ -430,6 +430,24 @@ df.columns
 
 pd11 = df.groupby(['partnum']).aggregate({'revenue':'sum'}).sort_values(ascending=False, by='revenue').head(10)
 pd10.plot(kind='bar')
+
+
+pd8
+
+pd8.to_excel('data.xlsx')
+
+
+
+with pd.ExcelWriter('data1.xlsx') as writer:
+    pd8.to_excel(writer, sheet_name='first', index=False)
+    pd8.to_excel(writer, sheet_name='second')
+    pd12.to_excel(writer, sheet_name='pivot')
+
+
+
+df = pd.read_excel('data1.xlsx', sheet_name='pivot')
+df
+
 
 
 
@@ -484,6 +502,15 @@ fl4 = lambda x: x>=0
 
 l5 = list(filter(fl4, l4))
 l5
+
+
+
+
+
+
+
+
+
 
 
 
