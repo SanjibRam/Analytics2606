@@ -21,8 +21,7 @@ store_data.shape
 records = []
 
 for i in range(0, 7501):
-    print(i)
-    records.append([str(store_data.values[i,j]) for j in range(0, 20) if str(store_data.values[i,j]) != 'nan'])
+    print(i)    records.append([str(store_data.values[i,j]) for j in range(0, 20) if str(store_data.values[i,j]) != 'nan'])
 
 records
 
